@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  height: 20vh;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: 1fr; /* makes it all the same height */
+  background: white;
+}
+
+.left .arrow {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  align-self: flex-end;
+}
+.right,
+.left {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.right .arrow {
+  background: #000;
+  height: 50px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  align-self: flex-end; /* makes it go to the bottom */
+}
+
+.tv {
+  position: relative;
+  display: flex;
+  align-content: flex-end;
+}
+.tv .collage {
+  position: absolute;
+  left: 2%; /* percentage is working better for me at all screen sizes -ar */
+  right: 0;
+  top: 5%; /* percentage is working better for me at all screen sizes -ar */
+  width: 68%;
+}
+desktop-content {
+  display: block;
+}
+.mobile-content {
+  display: none;
+}
+
+/* with arrows on top and bottom 
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+} */
+
+@media screen and (max-width: 1200px) {
+  main {
+    grid-template-columns: 20% 60% 20%;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 10% 80% 10%;
+  }
+  .desktop-content {
+    display: none;
+  }
+  .mobile-content {
+    display: block;
+  }
+}
