@@ -14,6 +14,7 @@ main {
   grid-template-columns: 1fr 2fr 1fr;
   grid-auto-rows: 1fr; /* makes it all the same height */
   background: white;
+  column-gap: 1em; /* this adds space between the columns if you want it */
 }
 
 .left .arrow {
@@ -22,7 +23,7 @@ main {
   width: 100%;
   height: 50px;
   text-align: center;
-  align-self: flex-end;
+  align-self: end;
 }
 .right,
 .left {
@@ -35,13 +36,19 @@ main {
   color: #fff;
   width: 100%;
   text-align: center;
-  align-self: flex-end; /* makes it go to the bottom */
+  align-self: end; /* makes it go to the bottom */
+}
+.middle {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  align-items: end;
 }
 
 .tv {
   position: relative;
-  display: flex;
-  align-content: flex-end;
+  margin: 0;
+  align-self: end; /* puts the tv at the bottom */
 }
 .tv .collage {
   position: absolute;
